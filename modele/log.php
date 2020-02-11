@@ -36,7 +36,7 @@
          
                           $sql = "INSERT INTO user (nom, prenom, mail, pass) VALUES ('$nom', '$prenom','$mail','$pass')";
          
-            $query = $this->pdo->prepare($sql);
+            $query = $this->dbh->prepare($sql);
          
             return $query->execute($user);
         }
@@ -45,5 +45,5 @@
 
     $new = new Database;
 
-    $new->insert();
+    
 ?>
