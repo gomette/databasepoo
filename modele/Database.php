@@ -6,6 +6,8 @@
         private $pass = '';
         private $usr = 'root';
         private $dbname = 'userlist';
+        protected $conn;
+ 
  
         public function __construct(){
 
@@ -19,7 +21,8 @@
             
  
             try {
-                $this->dbh = new PDO($dns , $this->usr,$this->pass, $options);
+                $this->conn = new PDO($dns , $this->usr,$this->pass, $options);
+
                 
             } catch (PDOException $e) {
                 $this->error = $e->getMessage();
@@ -27,23 +30,17 @@
             }
         }
 
-        public function insert($nom, $prenom, $mail,$pass) {
+        public function getConnection(){
 
-            $user = array(':Nom' => $nom,
-                          ':Prenom' => $prenom,
-                          ':Mail' => $mail,
-                          ':Pass' => $pass);
-         
-                          $sql = "INSERT INTO user (nom, prenom, mail, pass) VALUES ('$nom', '$prenom','$mail','$pass')";
-         
-            $query = $this->dbh->prepare($sql);
-         
-            return $query->execute($user);
+            return $this->conn;
+
         }
+
       
     }
 
-    $new = new Database;
+    // 
+    // var_dump($new);
 
     
 ?>

@@ -1,5 +1,5 @@
 <?php
-require_once('../modele/log.php');
+
 ?>
 
 <!DOCTYPE html>

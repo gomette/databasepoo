@@ -1,6 +1,6 @@
 <?php
 
-require_once('DatabaseOperations.php');
+require_once('log.php');
 
 
 $nom =$_POST['Nom'];
@@ -9,7 +9,6 @@ $pass =$_POST['Pass'];
 $mail =$_POST['Mail'];
 
 $new = new DatabaseOperations;
-$new->insert($nom,$prenom,$mail,$pass);
-
+$new->select($nom,$prenom,$mail,$pass);
 
 ?>
