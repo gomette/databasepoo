@@ -1,14 +1,13 @@
 <?php
 
-require_once('log.php');
+require_once('UserOperations.php');
 
 
-$nom =$_POST['Nom'];
-$prenom =$_POST['Prenom'];
-$pass =$_POST['Pass'];
-$mail =$_POST['Mail'];
 
-$new = new DatabaseOperations;
-$new->select($nom,$prenom,$mail,$pass);
+
+$new = new UserOperations;
+$data = $new->selectlist();
+
+var_dump($data);
 
 ?>

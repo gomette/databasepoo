@@ -1,5 +1,4 @@
 <?php
-require_once('../modele/log.php');
 require_once('../modele/selectuser.php');
 ?>
 
@@ -16,7 +15,6 @@ require_once('../modele/selectuser.php');
 </head>
 
 <body>
-
 
 </body>
 </html>
